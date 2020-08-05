@@ -1,11 +1,14 @@
-mkdir logs nodes
+!#/bin/bash
+
+rm -rf logs nodes && mkdir logs nodes
+
 
 home=$PWD
 
 function initNode() {
     cd $home
     nodeDir=$home/nodes/$1/
-    rm -rf $nodeDir && mkdir $nodeDir
+    rm -rf $nodeDir && mkdir -p $nodeDir
     cp $home/swarm.key $nodeDir
     ipfs -config=$nodeDir init 
     ipfs -config=$nodeDir bootstrap rm --all

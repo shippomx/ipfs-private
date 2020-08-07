@@ -22,7 +22,8 @@ function initNode() {
 
 function connectMainNode() {
     mainNode=$home/nodes/$1
-    key=$(sed -n 89p $mainNode/config)
+
+    key=$(cat $mainNode/config | awk -F "[PeerID]" '/PeerID/{print$0}')
     head=${key#*\"PeerID\"\: \"}
     PeerID=${head%\"\,}
     nohup ipfs -config=$mainNode daemon > $home/logs/$1.log 2>&1 &

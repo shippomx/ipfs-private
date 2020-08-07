@@ -17,7 +17,23 @@
 git clone https://github.com/shippomx/ipfs-private.git
 ```
 
-### 启动
+### 初始化
 ```bash
 ./init.sh
 ```
+
+### 启动
+```bash
+./start.sh
+```
+
+## 关于配置ipfs-desktop连接到刚刚搭建的私链
+
+### 安装参照官方文档
+![IPFS Config](https://s1.ax1x.com/2020/08/07/afBf9P.png)
+
+![IPFS Desktop Config 1](https://s1.ax1x.com/2020/08/07/afBRht.png)
+
+![IPFS Desktop Config 2](https://s1.ax1x.com/2020/08/07/afB2tI.png)
+
+然后重启软件，存取一个文件上去就可以在`ipfs-desktop`上看到刚刚的文件了。
